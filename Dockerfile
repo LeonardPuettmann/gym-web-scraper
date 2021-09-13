@@ -1,7 +1,16 @@
 FROM python:3.8-alpine
-COPY . /app
+
+RUN mkdir -p /home/app
+
 WORKDIR /app
-RUN pip install -r requirements.txt
-CMD python ./scraper.py
+
+COPY . /home/app
+COPY requirements.txt /tmp/requirements.txt
+COPY scraper.py /app
+COPY chromedriver.exe /app
+
+RUN pip install -r /tmp/requirements.txt
+
+CMD [ "python", "./scraper.py" ]
 
  

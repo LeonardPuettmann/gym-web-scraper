@@ -1,5 +1,3 @@
-import numpy as np
-import pandas as pd 
 import csv
 from datetime import datetime
 from selenium import webdriver

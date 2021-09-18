@@ -1,9 +1,15 @@
 import csv
 from datetime import datetime
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
 #Set up the webdriver to scrape information from the website
-driver = webdriver.Chrome()
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--window-size=1420,1080')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+driver = webdriver.Chrome(options=chrome_options)
 driver.implicitly_wait(10)
 driver.get('https://www.fitx.de/fitnessstudios/neuss-innenstadt')
 

@@ -31,7 +31,7 @@ exact_time = dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 liste = [f'{exact_time}', f'{auslastung_int}']
 
 # Open a .csv file and append the information to the list 
-with open('auslastung.csv', 'a') as f:  
+with open('/home/app/auslastung.csv', 'a') as f:  
     writer = csv.writer(f)
     # write the header
     writer.writerow(liste)
